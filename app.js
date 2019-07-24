@@ -39,8 +39,8 @@ io.sockets.on('connection', function (socket) {
     socket.room = 'Lobby'
     usernames[username] = username
     socket.join('Lobby')
-    socket.emit('updatechat', 'SERVER', 'you have connected to Lobby')
-    socket.broadcast.to('Lobby').emit('updatechat', 'SERVER', username + ' has connected to this room')
+    socket.emit('updatechat', 'Servidor', 'Has sido conectado al Lobby')
+    socket.broadcast.to('Lobby').emit('updatechat', 'Servidor', username + ' se ha conectado a esta sala')
     socket.emit('updaterooms', rooms, 'Lobby')
   })
 
@@ -58,17 +58,17 @@ io.sockets.on('connection', function (socket) {
     oldroom = socket.room
     socket.leave(socket.room)
     socket.join(newroom)
-    socket.emit('updatechat', 'SERVER', 'you have connected to ' + newroom)
-    socket.broadcast.to(oldroom).emit('updatechat', 'SERVER', socket.username + ' has left this room')
+    socket.emit('updatechat', 'Servidor', 'Has sido conectado a la sala:  ' + newroom)
+    socket.broadcast.to(oldroom).emit('updatechat', 'Servidor', socket.username + ' ha dejado esta sala')
     socket.room = newroom
-    socket.broadcast.to(newroom).emit('updatechat', 'SERVER', socket.username + ' has joined this room')
+    socket.broadcast.to(newroom).emit('updatechat', 'Servidor', socket.username + ' se ha unido a esta sala')
     socket.emit('updaterooms', rooms, newroom)
   })
 
   socket.on('disconnect', function () {
     delete usernames[socket.username]
     io.sockets.emit('updateusers', usernames)
-    socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected')
+    socket.broadcast.emit('updatechat', 'Servidor', socket.username + ' se ha desconectado')
     socket.leave(socket.room)
   })
 })
