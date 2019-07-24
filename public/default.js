@@ -31,7 +31,7 @@ socket.on('move', function (msg) {
 
 //  Rooms logic
 socket.on('connect', function () {
-  socket.emit('adduser', prompt("What's your name: "))
+  socket.emit('adduser', prompt('Como deseas que te llame: '))
 })
 
 socket.on('updatechat', function (username, data) {
