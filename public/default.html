@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chess with Socket.IO</title>
+    <link rel="stylesheet" href="lib/chessboard-0.3.0.min.css">
+    <link rel="stylesheet" href="/default.css" />
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <div id="roomsContainer">
+              <strong>ROOMS</strong>
+              <div id="rooms"></div>
+            </div>
+          </td>
+          <td>
+            <div id="roomCreationContainer">
+              <div id="room creation"></div>
+              <input id="roomname" style="width:200px;" />
+              <input type="button" id="roombutton" value="create room" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="conversationContainer">
+              <div id="conversation"></div>
+                <input id="data" />
+                <input type="button" id="datasend" value="send" />
+            </div>
+          </td>
+          <td><div id='gameBoard'></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="/socket.io/socket.io.js"></script>     
+    <script src="lib/chess.min.js"></script> 
+    <script src="lib/chessboard-0.3.0.min.js"></script> 
+    <script src="lib/jquery-1.11.1.js"></script> 
+    <script src="/default.js"></script>
+  </body>
+</html>

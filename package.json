@@ -1,0 +1,28 @@
+{
+  "name": "com2_sockets_chess",
+  "version": "1.0.0",
+  "description": "Chess with Socket.io and 'https://github.com/dwcares/RealTimeWeb-HOL' guide",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlukardSins/com2_sockets_chess.git"
+  },
+  "keywords": [
+    "chess",
+    "socket.io"
+  ],
+  "author": "AlukardSins, santiagomolinae",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlukardSins/com2_sockets_chess/issues"
+  },
+  "homepage": "https://github.com/AlukardSins/com2_sockets_chess#readme"
+}
